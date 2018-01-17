@@ -78,7 +78,10 @@ class Game(object):
 
 def get_game(id):
     while(True):
-        r = requests.get('https://www.skatstube.de/spiele/'+str(id), auth=auth)
+        try:
+            r = requests.get('https://www.skatstube.de/spiele/'+str(id), auth=auth)
+        except requests.exceptions.ConnectionError:
+            continue
         if r.status_code == 200:
             break
         time.sleep(random.randint(1, 4))

@@ -15,15 +15,16 @@ def merge_two_dicts(x, y):
     return z
 
 data = [
-        "skatstube_236000000_to_236099999.json",
-        "skatstube_236100000_to_236199999.json",
-        "skatstube_236200000_to_236299999.json",
-        "skatstube_236300000_to_236399999.json",
-        "skatstube_236400000_to_236499999.json",
-        "skatstube_236500000_to_236599999.json",
-        "skatstube_236600000_to_236699999.json",
-        "skatstube_236700000_to_236799999.json",
-        "skatstube_236800000_to_236899999.json",
+        "data/skatstube_236000000_to_236099999.json",
+        "data/skatstube_236100000_to_236199999.json",
+        "data/skatstube_236200000_to_236299999.json",
+        "data/skatstube_236300000_to_236399999.json",
+        "data/skatstube_236400000_to_236499999.json",
+        "data/skatstube_236500000_to_236599999.json",
+        "data/skatstube_236600000_to_236699999.json",
+        "data/skatstube_236700000_to_236799999.json",
+        "data/skatstube_236800000_to_236899999.json",
+        "data/skatstube_236900000_to_236999999.json",
         ]
 
 result = {}
@@ -50,7 +51,7 @@ for key in result.keys():
 
 
 writer = pytablewriter.MarkdownTableWriter()
-writer.table_name = "Auswertung Spiel 236000000 bis 236799999 (2.700.000 Haende)"
+writer.table_name = "Auswertung Spiel 236000000 bis 236999999 (3.000.000 Haende)"
 writer.header_list = ["Bube", "Ass", "Zehn", "Anzahl", "Ist", "Soll", "Abweichung(%)"]
 writer.value_matrix = []
 
