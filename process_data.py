@@ -14,25 +14,23 @@ def merge_two_dicts(x, y):
     z.update(y)
     return z
 
-with open("skatstube_236000000_to_236099999.json","r") as handle:
-    result = json.load(handle)
+data = [
+        "skatstube_236000000_to_236099999.json",
+        "skatstube_236100000_to_236199999.json",
+        "skatstube_236200000_to_236299999.json",
+        "skatstube_236300000_to_236399999.json",
+        "skatstube_236400000_to_236499999.json",
+        "skatstube_236500000_to_236599999.json",
+        "skatstube_236600000_to_236699999.json",
+        "skatstube_236700000_to_236799999.json",
+        "skatstube_236800000_to_236899999.json",
+        ]
 
+result = {}
 
-
-with open("skatstube_236100000_to_236199999.json","r") as handle:
-    result.update(json.load(handle))
-with open("skatstube_236200000_to_236299999.json","r") as handle:
-    result.update(json.load(handle))
-with open("skatstube_236300000_to_236399999.json","r") as handle:
-    result.update(json.load(handle))
-with open("skatstube_236400000_to_236499999.json","r") as handle:
-    result.update(json.load(handle))
-with open("skatstube_236500000_to_236599999.json","r") as handle:
-    result.update(json.load(handle))
-with open("skatstube_236600000_to_236699999.json","r") as handle:
-    result.update(json.load(handle))
-with open("skatstube_236700000_to_236799999.json","r") as handle:
-    result.update(json.load(handle))
+for data_file in data:
+    with open(data_file,"r") as handle:
+        result.update(json.load(handle))
 
 sums = {}
 for key in result.keys():
@@ -52,7 +50,7 @@ for key in result.keys():
 
 
 writer = pytablewriter.MarkdownTableWriter()
-writer.table_name = "Auswertung Spiel 236000000 bis 236799999 (2.400.000 Haende)"
+writer.table_name = "Auswertung Spiel 236000000 bis 236799999 (2.700.000 Haende)"
 writer.header_list = ["Bube", "Ass", "Zehn", "Anzahl", "Ist", "Soll", "Abweichung(%)"]
 writer.value_matrix = []
 
